@@ -20,7 +20,6 @@ def frontpage():
 
     <head>
         <title> First web server </title>
-
         <h1> <u> First web server </u> </h1>
         <p1> Hey! <br> This is my first web server </p1>
     </head>
@@ -31,7 +30,8 @@ def frontpage():
         </header>
 
         <main>
-            <img src="https://th.bing.com/th/id/OIP.vyeL1KIJpbGdWaeHh5HfDAHaEq?w=270&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" width="400" height="300">
+            <img src="https://th.bing.com/th/id/OIP.vyeL1KIJpbGdWaeHh5HfDAHaEq?w=270&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" 
+                 width="400" height="300">
         </main>
     </body>
 </div>
