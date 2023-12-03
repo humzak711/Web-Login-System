@@ -7,9 +7,8 @@ app = Flask(__name__) # assign webpage to 'app'
 def frontpage():
     
     # render HTML on the page
-    return ''' 
+    return '''    
 <html>
-
 <div style="
     text-align: center;
     background-color: blue;
@@ -17,10 +16,10 @@ def frontpage():
     width: 100%;
     height: 100%;
     ">
-
+    
     <head>
         <title> First web server </title>
-        <h1> <u> First web server </u> </h1>
+        <h1> <br> <u> First web server </u> </h1>
         <p1> Hey! <br> This is my first web server </p1>
     </head>
 
