@@ -1,49 +1,88 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
+import pymysql as MySQLdb
 
-app = Flask(__name__) # assign webpage to 'app'
+# connect to database
+db = MySQLdb.connect(host=input('Enter MySQL host: '),
+                     user=input('Enter username: '),
+                     passwd=input('Enter password: '),
+                     db=input('Enter database name: '))
+table = input('input table name: ')
+cur = db.cursor()  # create cursor on mysqldb
 
-# frontend
-@app.route('/') # first page available on the site
+# create the flask application
+app = Flask(__name__)  # assign webpage to 'app'
+app.secret_key = input('Enter secret key: ')  # secret key for session
+
+
+# render HTML templates
+@app.route('/')  # first page available on the site
 def frontpage():
-    
-    # render HTML on the page
-    return '''    
-<html>
-<style> 
-    html {
-    background-color: blue; width: 100%; height: 100%;
-    text-align: center; color: white; font-family: sans-serif; font-size: 20px; 
-    }
-</style>
-    
-    <!DOCTYPE html>
-<html>
-    <head>
-        <title> First web server </title>
-        <h1> <br> <u> This is my first web server </u> </h1>
-    </head>
+    return render_template('index.html') # render HTML on the page
 
-    <body>
-        <header>
-            <p1> <b> Come back later! </b> </p1>
-        </header>
-
-        <main>
-            <img src="https://th.bing.com/th/id/OIP.vyeL1KIJpbGdWaeHh5HfDAHaEq?w=288&h=181&c=7&r=0&o=5&dpr=2&pid=1.7" 
-            width:"300" height:"350">
-        </main>
-
-        <footer>
-            <script src="https://tryhackme.com/badge/2315259"> </script>
-        </footer>
-    </body>
-</html>
-'''
-
-@app.route('/home') # /home redirects to front page
+@app.route('/home/')  # /home redirects to front page
 def home():
     return redirect(url_for('frontpage'))
 
-# initiate the webpage
+@app.route('/login/', methods=['POST', 'GET'])  #login page
+def login():
+
+    if request.method == 'POST':
+        
+        # get form data
+        username = request.form['username']
+        password = request.form['password']
+        
+        # remove trailing whitespace from the credentials
+        username = username.replace(" ", "")
+
+        # check if login credentials exist
+        if cur.execute("SELECT * FROM %s WHERE usernames = %s AND passwords = %s", (table, username, password)) == True:
+            return render_template('login_successful.html') # render loading screen 
+        else:
+            flash('ERROR: Login unsuccessful. Username or password incorrect')
+
+    return render_template('login.html')
+    
+# sign-up page
+@app.route('/signup/', methods=['POST', 'GET'])  
+def signup():
+    if request.method == 'POST':
+        
+        # get form data
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+        
+        # remove trailing whitespace from the credentials
+        password = password.replace(" ", "") 
+        username = username.replace(" ", "")
+        email = email.replace(" ", "") 
+
+        # check if username exists
+        cur.execute("SELECT * FROM %s WHERE usernames = %s", (table, username))
+        user_check = cur.fetchone()
+        # check if email exists
+        cur.execute("SELECT * FROM %s WHERE emails = %s", (table, email))
+        email_check = cur.fetchone()
+
+        if user_check:
+            # if the username already exists
+            flash('ERROR: Sign up unsuccessful. Username already exists')
+            return render_template('signup.html')
+        elif email_check:
+            # if the email already exists
+            flash('ERROR: Sign up unsuccessful. Email already exists')
+            return render_template('signup.html')
+        else:
+            # insert data into database
+            cur.execute("INSERT INTO %s (usernames, passwords, emails) VALUES (%s,%s,%s)",(table, username, password, email))
+            db.commit()
+            return render_template('signup_successful.html') # redirect to loading screen
+            
+    # render sign-up form
+    return render_template('signup.html')
+
+
+# run the web application
 if __name__ == '__main__': 
     app.run()
