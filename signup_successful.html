@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="Refresh" content="3; url='http://127.0.0.1:5000/home'" /> <!-- redirect back to home after 3 seconds -->
+  <head>
+    <title> Sign-up successful </title>
+    <h1> <b> Your sign-up was successful, you will be redirected shortly </b> 
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwknLxw8_K-0x8uhx3ofCeWjNVZht10IK3_3nXxO5GVjEYgN0gUb-LXy06j55Pcx1qhoB1bpbDqwRxrgx0iTgdChFCVMBA6ncDFEXbtOdft-5ZIsDxiLO6rIkhOOG2vzaGu-IM5rzyNF6N_WeEORujVi1Sr7Za6UO2LP9zu8QoWHxd2jcfIoqF99yu/s16000/Green%20Check%20Mark.jpg"
+    width="40" height="40" id="tick">
+    <br> <br> 
+    </h1>
+    
+    <style>
+      html {
+        height: 100%;
+        display: table;
+        margin: auto;
+        text-align: center;
+        color: green;
+      }
+      #tick { 
+        margin-left: 10px;
+        float: right;
+      }
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .loader { 
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #9334db;
+        width: 110px;
+        height: 110px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+        margin: auto;
+        margin-bottom: 100px;
+      }
+      @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+      }
+      @keyframes spin {
+         0% { transform: rotate(0deg); }
+         100% { transform: rotate(360deg); }
+      }
+
+      a {
+        position: absolute;
+        bottom: 120px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+        <div class="loader"></div>
+        <a href="http://127.0.0.1:5000/home">Back to home</a>
+    </main>
+  </body>
+</html>

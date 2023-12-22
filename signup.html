@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Sign-up Form</title>
+
+    <style>
+      .flashes { /* style possible error messages */
+          list-style-type: none;
+          overflow: hidden;
+          position: relative;
+          color: red;
+          text-align: center;
+          bottom: 20px;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        width: 300px;
+        margin: 50px auto;
+      }
+      h1 {
+        text-align: center;
+      }
+      #githubicon {
+        margin-right: 4px;
+        position: relative;
+        top: 6px
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+      }
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background: #4CAF50;
+        color: white;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background: #43a047;
+      }
+      footer { 
+        text-align: center; 
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+        <h1> <br> <u> Flask sign-up form </u> </h1>
+    </header> 
+    
+    </main> <!-- sign up form -->
+      <form id="signupForm" method="POST" onsubmit="return validateForm()">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required minlength="1" maxlength="24"><br>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required minlength="8" maxlength="24"><br>
+        </div>
+        <div>
+         <label for="email">Email:</label>
+         <input type="email" id="email" name="email" required><br>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </main>
+
+    <footer> <!-- error messages incase email or username are taken-->
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <p1 class=flashes>
+      {% for message in messages %}
+        <li> <b> {{ message }} </b> </li>
+      {% endfor %}
+      </p1>
+      {% endif %} 
+      {% endwith %}
+
+
+      <script src="https://tryhackme.com/badge/2315259"> </script> 
+      <p2> <br><br> 
+        <a href="https://github.com/humzak711">Click here to follow me on github!</a> 
+      </p2>
+        <img src="https://onmsft.com/wp-content/uploads/2020/04/githubappicon.jpg"
+        width="30" height="25" id="githubicon"> 
+
+      <p3> <br><br> <a href="http://127.0.0.1:5000">Back to home</a> </p3>
+    </footer>
+
+    <script> // tighten user input restrictions, fix possible security issues
+      function validateForm() {
+      var username = document.forms["signupForm"]["username"].value;
+      var password = document.forms["signupForm"]["password"].value;
+      var email = document.forms["signupForm"]["email"].value;
+
+        if (username == "" || password == "" || email == "") {
+          alert("Please fill out all fields.");
+          return false;
+        } else if (!/^(?=[A-Za-z-_@=+!?.,£$%^*/|()]*\d)(?=[A-Z-_@=+!?.,£$%^*/|()\d]*[a-z])(?=[a-z-_@=+!?.,£$%^*/|()\d]*[A-Z])[A-Za-z\d@=+!?.,£$%^*/|()_-]{8,24} *$/.test(password)) {
+          alert("Password must be 8-24 characters and contain at least:\nOne number, one capital letter, one lowercase letter and no spaces.\nSpecial characters allowed: @=+!?.,£$%^*/|()_-");
+          return false;
+        } else if (!/^([A-Za-z\d@=+!?.,£$%^*/|()_-]{1,24} *$)/.test(username)) {
+          alert("Username must be 1-24 characters and cannot contain spaces.\nSpecial characters allowed: @=+!?.,£$%^*/|()_-");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
