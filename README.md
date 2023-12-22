@@ -1,5 +1,12 @@
 # IMPORTANT - READ ME BEFORE USING THIS CODE
-basic web server written in python using the flask framework
+- Basic web server written in python using the flask framework, 
+ This web server contains a home page, sign up page and a login page which interact with a MySQL database
+ whilst maintaining a high level of security to prevent possible security vulnerabilities such as SQL injection, XSS and much more.
+
+- This is meant to be used as a template to build complete web servers by already having a secure login and sign-up page which prevent;
+ Security vulnerabilities, users having the same username or email associated with their stored credentials, and users having weak credentials
+
+- feel free to implement any new features! Just make a pull request and I will take a look at the code, if it is to a high standard it will be accepted
 
 to install flask, run pip3 install flask on your terminal
 
