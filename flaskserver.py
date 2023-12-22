@@ -23,7 +23,8 @@ def frontpage():
 def home():
     return redirect(url_for('frontpage'))
 
-@app.route('/login/', methods=['POST', 'GET'])  #login page
+# login page
+@app.route('/login/', methods=['POST', 'GET'])  
 def login():
 
     if request.method == 'POST':
