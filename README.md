@@ -1,4 +1,4 @@
-# WebServer
+# IMPORTANT - READ ME BEFORE USING THIS CODE
 basic web server written in python using the flask framework
 
 to install flask, run pip3 install flask on your terminal
