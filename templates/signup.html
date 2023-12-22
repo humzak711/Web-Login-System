@@ -63,7 +63,7 @@
     </header> 
     
     </main> <!-- sign up form -->
-      <form id="signupForm" method="POST" onsubmit="return validateForm()">
+      <form id="SignupForm" method="POST" onsubmit="return validateForm()">
         <div>
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required minlength="1" maxlength="24"><br>
@@ -93,20 +93,23 @@
 
 
       <script src="https://tryhackme.com/badge/2315259"> </script> 
-      <p2> <br><br> 
-        <a href="https://github.com/humzak711">Click here to follow me on github!</a> 
-      </p2>
+      
+      <p2> <br><br> <a href="http://your localhost/login">Login</a> </p2>
+      <p3> <br> <a href="http://your localhost">Back to home</a> </p3>
+
+      <p4> <br><br> 
+        <a href="https://github.com/humzak711">Click here to follow me on github! </a> 
+      </p4>
         <img src="https://onmsft.com/wp-content/uploads/2020/04/githubappicon.jpg"
         width="30" height="25" id="githubicon"> 
-
-      <p3> <br><br> <a href="http://127.0.0.1:5000">Back to home</a> </p3>
+      
     </footer>
 
     <script> // tighten user input restrictions, fix possible security issues
       function validateForm() {
-      var username = document.forms["signupForm"]["username"].value;
-      var password = document.forms["signupForm"]["password"].value;
-      var email = document.forms["signupForm"]["email"].value;
+      var username = document.forms["SignupForm"]["username"].value;
+      var password = document.forms["SignupForm"]["password"].value;
+      var email = document.forms["SignupForm"]["email"].value;
 
         if (username == "" || password == "" || email == "") {
           alert("Please fill out all fields.");
