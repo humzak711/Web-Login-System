@@ -15,7 +15,8 @@ IMPORTANT
 - change all instances of 'your localhost' on the html templates to your localhost,
   e.g. if your localhost runs on port 1111, change all occorrunces of 'http://your localhost' to 'http://127.0.0.1:1111'
   and keep the same url extension, e.g change 'http://your localhost/login' to 'http://127.0.0.1:1111/login'
-  This is crucial for the web server to be able to run properly and for the url redirects to work
+  This is crucial for the web server to be able to run properly and for the url redirects to work,
+  the default localhost + port for flask is 127.0.0.1:5000
 
 - This program assumes you are using a MySQL database, if you are not then make changes to the code accordingly.
   This program also assumes the database contains the columns; 'passwords', 'usernames', and 'emails' and assumes
