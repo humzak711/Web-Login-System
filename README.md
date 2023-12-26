@@ -6,8 +6,9 @@
 - This is meant to be used as a template to build complete web servers by already having a secure login and sign-up page which prevent;
  Security vulnerabilities, users having the same username or email associated with their stored credentials, and users having weak credentials
 
-- feel free to implement any new features! Just make a pull request and I will take a look at the code, if it is to a high standard it will be accepted
-
+- feel free to implement any new features! Just make a pull request and I will take a look at the code, if it is to a high standard it will be accepted,
+  also let me know if theres any ways which I can improve my code to make it more efficient, im always looking for ways to imrpove!
+  
 to install flask, run pip3 install flask on your terminal
 
 IMPORTANT
