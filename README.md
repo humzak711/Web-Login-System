@@ -11,7 +11,7 @@
   
 to install flask, run pip3 install flask on your terminal
 
-for this project I used; Python (with Flask), SQL (with MySQL), HTML, CSS and Javascript
+for this project I used; Python (with Flask), SQL (with MySQL), HTML, CSS, and Javascript
 
 IMPORTANT
 
