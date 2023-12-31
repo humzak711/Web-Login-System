@@ -1,4 +1,12 @@
 # IMPORTANT - READ ME BEFORE USING THIS CODE
+
+THIS IS STILL CURRENTLY BEING WORKED ON 
+FEATURES COMING SOON -
+Hashed database credentials
+Forgot password page
+Increased security against session fixation
+
+
 - Basic web server written in python using the flask framework, 
  This web server contains a home page, sign up page and a login page which interact with a MySQL database
  whilst maintaining a high level of security to prevent possible security vulnerabilities such as SQL injection, XSS and much more.
