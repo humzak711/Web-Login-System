@@ -2,10 +2,10 @@
 
 THIS IS STILL CURRENTLY BEING WORKED ON 
 FEATURES COMING SOON -
-Hashed database credentials
-Forgot password page
-Increased security against session fixation
-Re-styling webpages
+Hashed database credentials,
+Forgot password page,
+Increased security against session fixation,
+Re-styling webpages,
 
 
 - Basic web server written in python using the flask framework, 
