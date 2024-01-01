@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="UTF-8" />
     <title>Login</title>
+    
     <style>
       * {
         margin: 0;
@@ -16,26 +16,14 @@
           overflow: hidden;
           position: relative;
           color: red;
+          font-family: 'Times New Roman', Times, serif;
           text-align: center;
           bottom: 20px;
       }
 
       body {
         font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-
-      footer { 
-        text-align: center; 
-        position: absolute;
-        bottom: 50px;
-        width: 100%;
-      }
-
-      #githubicon {
-        margin-right: 4px;
-        position: relative;
-        top: 6px
+        background-color: black;
       }
 
       .login-page {
@@ -51,7 +39,7 @@
       .login-box {
         width: 100%;
         height: 100%;
-        background-color: #ffffff;
+        background-color: white;
         border-radius: 5px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
       }
@@ -91,7 +79,7 @@
         padding: 10px;
         font-size: 16px;
         border-radius: 5px;
-        background-color: #4caf50;
+        background-color: green;
         color: #ffffff;
         border: 0;
         cursor: pointer;
@@ -100,21 +88,55 @@
       input[type="submit"]:hover {
         background-color: #333333;
       }
+
+      a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      a:hover {
+        animation: ChangeColorV2 0.5s ease forwards;
+      }
+
+      h1:hover {
+        animation: ChangeColor 0.5s ease forwards;
+      }
+
+      /* Define the animation */
+      @keyframes ChangeColor {
+            from {
+                color: black;
+            }
+
+            to {
+                color: red;
+            }
+        }
+
+        /* Define the animation */
+      @keyframes ChangeColorV2 {
+            from {
+                color: blue;
+            }
+
+            to {
+                color: red;
+            }
+        }
     </style>
   </head>
 
   <body>
     <main>
       <div class="login-page">
-
         <div class="login-box">
           <form method="post">
             <div class="user-box">
               <h1>Login</h1>
-              <input type="text" name="username" placeholder="Username" required maxlength="30"/>
+              <input type="text" name="username" placeholder="Username" required maxlength="100"/>
             </div>
             <div class="pass-box">
-              <input type="password" name="password" placeholder="Password" required maxlength="30" />
+              <input type="password" name="password" placeholder="Password" required maxlength="100" />
             </div>
             <input type="submit" value="Login" />
           </form>
@@ -129,21 +151,12 @@
            </p1>
            {% endif %} 
            {% endwith %}
-
-           <p2> <a href="http://your localhost/signup">Sign-up</a> </p2>
-           <p3> <br><br> <a href="http://your localhost">Back to home</a> </p3>
+           
+           <p2> <a href="/signup">Sign-up</a> </p2>
+           <p3> <br> <a href="/forgot_password">Forgot password?</a> </p3>
+           <p4> <br><br> <a href="/home">Home</a> </p4>
         </div>
-
       </div>
     </main>
-
-    <footer>
-        <p4> 
-          <a href="https://github.com/humzak711">Click here to follow me on github! </a>
-          <img src="https://onmsft.com/wp-content/uploads/2020/04/githubappicon.jpg"
-          width="30" height="25" id="githubicon"> 
-        </p4>
-    </footer>
   </body>
-
 </html>
