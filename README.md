@@ -1,19 +1,10 @@
 # IMPORTANT - READ ME BEFORE USING THIS CODE
 
-THIS IS STILL CURRENTLY BEING WORKED ON 
-FEATURES COMING SOON -
-Hashed database credentials,
-Forgot password page,
-Increased security against session fixation,
-Re-styling webpages,
-
-
 - Basic web server written in python using the flask framework, 
- This web server contains a home page, sign up page and a login page which interact with a MySQL database
- whilst maintaining a high level of security to prevent possible security vulnerabilities such as SQL injection, XSS and much more.
+ This web server contains a home page, login page, signup page and a user dashboard and interacts with a MySQL database
+ whilst using best practises to prevent possible security vulnerabilities such as SQL injection, XSS, session fixation and much more.
 
-- This is meant to be used as a template to build complete web servers by already having a secure login and sign-up page which prevent;
- Security vulnerabilities, users having the same username or email associated with their stored credentials, and users having weak credentials
+- This is meant to be used as a template to build complete web applications by already implementing best practises to prevent security vulnerabilities 
 
 - feel free to implement any new features! Just make a pull request and I will take a look at the code, if it is to a high standard it will be accepted,
   also let me know if theres any ways which I can improve my code to make it more efficient, im always looking for ways to imrpove!
@@ -24,14 +15,8 @@ for this project I used; Python (with Flask), SQL (with MySQL), HTML, CSS, and J
 
 IMPORTANT
 
-- change all instances of 'your localhost' on the html templates to your localhost,
-  e.g. if your localhost runs on port 1111, change all occorrunces of 'http://your localhost' to 'http://127.0.0.1:1111'
-  and keep the same url extension, e.g change 'http://your localhost/login' to 'http://127.0.0.1:1111/login'
-  This is crucial for the web server to be able to run properly and for the url redirects to work,
-  the default localhost + port for flask is 127.0.0.1:5000
-
 - This program assumes you are using a MySQL database, if you are not then make changes to the code accordingly.
-  This program also assumes the database contains the columns; 'passwords', 'usernames', and 'emails' and assumes
-  that the 'passwords' column is case sensitive whereas both the 'usernames' and 'emails' columns are case insensitive
-  
+  This program also assumes the database contains the columns; 'passwords', 'usernames', and 'recovery_keys' and assumes
+  that the 'passwords' column and 'recovery_keys' columns are case sensitive and the usernames column is case insensitive
+    
 - This code works best in a python 3.11 environment
