@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recovery Key</title>
+
+    <style>
+        html {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .flashes {
+            color: red;
+            list-style-type: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+
+        body {
+            background-color: #1f1f1f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #f0f0f0;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        label {
+            color: #e0e0e0;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #555;
+            background-color: #2f2f2f;
+            color: #fff;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4c0fad;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4c0fad;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #008ba3;
+        }
+
+        h1:hover {
+            animation: ChangeColor 0.5s ease forwards;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            animation: ChangeColor 0.5s ease forwards;
+        }
+
+        @keyframes ChangeColor {
+            from {
+                color: white;
+            }
+            to {
+                color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recovery Key Generated</h1>
+    <p style="font-size: 18px;"> <b> IMPORTANT <br> Please keep this recovery key safe, if you ever forget your login credentials the recovery key 
+       will be needed to recover your account. If you lose your recovery key, you will not get another one
+       and therefore won't be able to recover your account. <br> Copy and paste the recovery key into the box to complete your sign-up.</b>
+    </p>
+
+    <p style="margin-top: 50px;">Your recovery key: {{ recovery_key }}</p>
+
+    <form action="/verify_recovery_key/" method="POST" style>
+        <label for="entered_recovery_key">Paste Recovery Key Here:</label>
+        <input type="text" id="entered_recovery_key" name="entered_recovery_key" required maxlength="100"><br><br>
+        
+        <button type="submit">Submit Recovery Key & Confirm You Have Stored The Recovery Key Somewhere Safe</button>
+    </form>
+
+    <p><br></p>
+    
+    {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <p1 class=flashes>
+          {% for message in messages %}
+            <li> <b> {{ message }} </b> </li>
+          {% endfor %}
+          </p1>
+          {% endif %} 
+          {% endwith %}
+
+    <p1><br><br> <a href="/signup">Cancel Signup</a></p1>
+
+</body>
+
+</html>
