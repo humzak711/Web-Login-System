@@ -16,7 +16,7 @@ for this project I used; Python (with Flask), SQL (with MySQL), HTML, CSS, and J
 IMPORTANT
 
 - This program assumes you are using a MySQL database, if you are not then make changes to the code accordingly.
-  This program also assumes the database contains the columns; 'passwords', 'usernames', and 'recovery_keys' and assumes
+  This program also assumes the database contains a table named 'users' which stores the columns; 'passwords', 'usernames', and 'recovery_keys' and assumes
   that the 'passwords' column and 'recovery_keys' columns are case sensitive and the usernames column is case insensitive
     
 - This code works best in a python 3.11 environment
