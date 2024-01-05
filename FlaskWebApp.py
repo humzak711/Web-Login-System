@@ -30,13 +30,10 @@ def check_logged_in():
 
 
 # Home pages
+@app.route('/home/')  
 @app.route('/')  
 def frontpage():
     return render_template('index.html')
-
-@app.route('/home/')  
-def home():
-    return redirect(url_for('frontpage'))
 
 
 # Login page
