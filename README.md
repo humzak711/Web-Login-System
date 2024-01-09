@@ -14,7 +14,8 @@ to install flask, run pip3 install flask on your terminal
 for this project I used; Python (with Flask), SQL (with MySQL), HTML, CSS, and Javascript
 
 IMPORTANT
-
+- Before running the code, edit the config file to contain your MySQL database credentials for easy use
+  
 - This program assumes you are using a MySQL database, if you are not then make changes to the code accordingly.
   This program also assumes the database contains a table named 'users' which stores the columns; 'passwords', 'usernames', and 'recovery_keys' and assumes
   that the 'passwords' column and 'recovery_keys' columns are case sensitive and the usernames column is case insensitive
