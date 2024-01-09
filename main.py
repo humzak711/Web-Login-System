@@ -15,13 +15,3 @@ app.register_blueprint(Dashboard_blueprint) # User dashboard
 # Run the web application
 if __name__ == '__main__': 
     app.run()
-
-
-# to do:
-# bug hunt and pentest, find exploits and debug
-    
-# make a live chat with user chatbox rooms
- 
-# figure out how to implement sanitized CSRF tokens
-# implement more sanitization and server side validation
-# implement rate limitation
