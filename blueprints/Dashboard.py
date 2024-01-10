@@ -32,6 +32,6 @@ def logout():
         session.pop('logged_in', None)
         session.pop('username', None) 
         
-        return redirect(url_for('frontpage'))
+        return redirect(url_for('Home.frontpage'))
     else:
         return redirect('/404')
