@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, session, redirect, url_for
 from modules.SecurityChecks import check_logged_in  
 
-Dashboard_blueprint = Blueprint('dashboard', __name__)
+Dashboard_blueprint = Blueprint('Dashboard', __name__)
 
 # Dashboard accessible if logged in
 @Dashboard_blueprint.route('/dashboard/')
@@ -19,7 +19,7 @@ def dashboardAPI(username:str) -> render_template:
         if username.lower() == session.get('username'):
             return render_template('dashboard.html', username=username)
         else:
-            return redirect(url_for('dashboard')) 
+            return redirect(url_for('Dashboard.dashboard')) 
         
     else: # redirect to login page if user is not logged in
         return render_template('login_redirect.html')
