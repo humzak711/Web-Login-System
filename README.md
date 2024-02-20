@@ -1,6 +1,6 @@
 # IMPORTANT - READ ME BEFORE USING THIS CODE
 
-- Basic web server written in python using the flask framework, 
+- Basic web login system written in python using the flask framework, 
  This web server contains a home page, login page, signup page and a user dashboard and interacts with a MySQL database
  whilst using best practises to prevent possible security vulnerabilities such as SQL injection, XSS, session fixation and much more.
 
